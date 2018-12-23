@@ -1,6 +1,7 @@
 package com.wenhq.spring.jiemi.chapter02.ioc;
 
 public class FxNewsProvider {
+	private String myName = "myName";
 
 	private IFxNewsPersister fxNewsPersister;
 	private IFxNewsListener fxNewsListener;
@@ -38,5 +39,14 @@ public class FxNewsProvider {
 	public void setFxNewsListener(IFxNewsListener fxNewsListener) {
 		this.fxNewsListener = fxNewsListener;
 	}
+
+	public String getMyName() {
+		return myName;
+	}
+
+	public void setMyName(String myName) {
+		this.myName = myName;
+	}
+	
 
 }

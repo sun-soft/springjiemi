@@ -12,6 +12,9 @@
 		<constructor-arg type="IFxNewsListener">
 			<ref bean= "fxNewsListener" />
 		</constructor-arg>
+		<property name="myName">
+			<value>${app.myName}</value>
+		</property>
 	</bean>
 
 	<bean id="fxNewsPersister"
