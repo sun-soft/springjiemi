@@ -1,7 +1,7 @@
 package com.wenhq.spring.jiemi.chapter04.beanfactory;
 
 import java.beans.PropertyEditor;
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.PropertyEditorRegistry;

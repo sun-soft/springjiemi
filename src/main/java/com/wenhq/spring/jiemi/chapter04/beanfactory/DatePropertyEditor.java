@@ -1,6 +1,7 @@
 package com.wenhq.spring.jiemi.chapter04.beanfactory;
 
 import java.beans.PropertyEditorSupport;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -12,7 +13,8 @@ public class DatePropertyEditor extends PropertyEditorSupport{
 	public void setAsText(String text) throws IllegalArgumentException {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
         LocalDate date= LocalDate.parse(text, formatter);
-        this.setValue(date);
+        Date d = Date.valueOf(date);
+        this.setValue(d);
 	}
 
 	public String getDatePattern() {
