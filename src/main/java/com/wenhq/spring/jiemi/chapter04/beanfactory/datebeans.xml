@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+			<list>
+				<ref bean="datePropertyEditorRegistar" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="fxNewsProvider"
+		class="com.wenhq.spring.jiemi.chapter02.ioc.FxNewsProvider">
+		<property name="myDate">
+		<value>2018-01-02</value>
+		</property>
+	</bean>
+	
+	<bean id = "datePropertyEditor" class = "com.wenhq.spring.jiemi.chapter04.beanfactory.DatePropertyEditor">
+		<property name="datePattern">
+			<value>yyyy-MM-dd</value>
+		</property>
+	</bean>
+	
+	<bean id = "datePropertyEditorRegistar" class="com.wenhq.spring.jiemi.chapter04.beanfactory.DatePropertyEditorRegistar">
+		<property name = "propertyEditor">
+			<ref bean="datePropertyEditor" />
+		</property>
+	</bean>
+
+	<bean id="fxNewsPersister"
+		class="com.wenhq.spring.jiemi.chapter02.ioc.MockFxNewsPersister">
+	</bean>
+
+	<bean id="fxNewsListener"
+		class="com.wenhq.spring.jiemi.chapter02.ioc.MockFxNewsListener">
+	</bean>
+
+</beans>

@@ -1,7 +1,10 @@
 package com.wenhq.spring.jiemi.chapter02.ioc;
 
+import java.util.Date;
+
 public class FxNewsProvider {
 	private String myName = "myName";
+	private Date myDate = null;
 
 	private IFxNewsPersister fxNewsPersister;
 	private IFxNewsListener fxNewsListener;
@@ -46,6 +49,14 @@ public class FxNewsProvider {
 
 	public void setMyName(String myName) {
 		this.myName = myName;
+	}
+
+	public Date getMyDate() {
+		return myDate;
+	}
+
+	public void setMyDate(Date myDate) {
+		this.myDate = myDate;
 	}
 	
 
